@@ -1,0 +1,93 @@
+body {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 600;
+  background-color: #fff;
+  color: #000;
+  margin: 0; /* Center content vertically */
+  display: flex; /* Center content horizontally */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Ensure content fills viewport */
+}
+
+.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4d6c1; /* lighty on dark */
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #b7a191; /* lightly darky on dark */
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #f4d6c1; /* lighty on dark */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4e009c; /* Purple */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#gradient-text {
+  font-size: 80px; /* Adjust font size as needed */
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to right, #818cf8, #e0e7ff, #38bdf8, #e879f9,#38bdf8, #e0e7ff, #818cf8);
+  animation: animate 8s infinite linear; /* Set animation duration and direction */
+}
+
+@keyframes animate {
+  0% {
+    background-position: **100%** 0%; /* Start from the right (100%) */
+  }
+  100% {
+    background-position: 0% 0%; /* Move to the left (0%) */
+  }
+}
